@@ -1,18 +1,19 @@
 name: Health Check
- 
+
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-  workflow_dispatch:      # allows manual run from the Actions tab
- 
+  workflow_dispatch:
+
 jobs:
   check:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-   - name: Run health check
-        run: |
-          chmod +x scripts/health_check.sh
-          ./scripts/health_check.sh
+
+      - name: Run health check
+        run: bash scripts/health_check.sh
