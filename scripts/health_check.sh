@@ -1,6 +1,6 @@
 #!/bin/bash
 # Simple health check for Coinpedia Markets
-URL="https://markets.coinpedia.org/"
+URL="https://markets.coinpedia.org/broken-url"
  
 STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL"  -w "%{http_code} %{time_total}" )
 
